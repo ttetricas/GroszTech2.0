@@ -1,0 +1,284 @@
+:root {
+    --azul-escuro: #0b1c2d;
+    --azul-neon: #00aaff;
+    --branco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--azul-escuro), #0e2a47);
+    color: var(--branco);
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 90px; /* controla a altura fixa da navbar */
+
+    padding: 0 60px; /* remove o padding vertical */
+
+    background-color: rgba(8, 24, 39, 0.95);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--azul-neon);
+}
+
+/* CARDS */
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 50px 30px;
+}
+
+.card {
+    width: 350px;
+    min-height: 420px;
+
+    scroll-margin-top: 120px;
+
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(0, 170, 255, 0.3);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 0 15px rgba(0, 170, 255, 0.4),
+        0 0 30px rgba(0, 170, 255, 0.2);
+}
+
+.card:target {
+    border-color: var(--azul-neon);
+
+    box-shadow:
+        0 0 15px rgba(0, 170, 255, 0.7),
+        0 0 30px rgba(0, 170, 255, 0.5),
+        0 0 50px rgba(0, 170, 255, 0.3);
+
+    transform: scale(1.03);
+
+    transition: all 0.4s ease;
+}
+
+.card h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--azul-neon);
+}
+
+.card p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* BOTÃO */
+
+.btn-download {
+    margin-top: 25px;
+    padding: 15px 40px;
+
+    background-color: var(--azul-neon);
+    color: var(--azul-escuro);
+
+    font-weight: bold;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #008ecc;
+    transform: scale(1.05);
+}
+
+/* FORMULÁRIO DE CONTATO */
+
+.form {
+    max-width: 600px;
+    margin: 30px auto 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--branco);
+
+    border: 1px solid rgba(0, 170, 255, 0.3);
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-color: var(--azul-neon);
+
+    box-shadow:
+        0 0 10px rgba(0, 170, 255, 0.4),
+        0 0 20px rgba(0, 170, 255, 0.2);
+}
+
+.form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form button {
+    padding: 15px;
+
+    background-color: var(--azul-neon);
+    color: var(--azul-escuro);
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.form button:hover {
+    background-color: #008ecc;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px rgba(0, 170, 255, 0.5),
+        0 0 30px rgba(0, 170, 255, 0.2);
+}
+
+.form button:active {
+    transform: scale(0.98);
+}
+
+.contato {
+    margin-top: 40px;
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(0, 170, 255, 0.3);
+}
+
+.contato h1 {
+    color: var(--azul-neon);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contato p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contato-info {
+    margin-top: 25px;
+}
+
+.contato-info p {
+    margin: 12px 0;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+        min-height: auto;
+    }
+}
