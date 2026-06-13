@@ -5,6 +5,7 @@
     <title>GroszTech - Empresa</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/grosztechico.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
 
@@ -50,27 +51,60 @@
 </div>
 
 <section id="contato" class="contato">
-    <h1>Entre em Contato</h1>
 
-    <p>
-        Tem dúvidas sobre o projeto UniBoard ou deseja conhecer mais sobre a GroszTech?
-        Entre em contato com nossa equipe.
-    </p>
+    <div class="contato-container">
+        <div class="contato-info">
 
-    <form class="form" method="POST">
-
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="Seu Nome" required>
-        <input type="email" name="email" placeholder="Seu E-mail" required>
-        <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+            <h1>Entre em contato conosco:</h1>
         
-        <!-- Configura o assunto do e-mail -->
-        <input type="hidden" name="_subject" value="Novo contato do site">
+            <h2><i class="fa-solid fa-location-dot"></i> Localização</h2>
+            <p>Mongaguá - SP</p>
+        
+            <h2><i class="fa-solid fa-envelope"></i> Nosso E-mail</h2>
+            <p>contatogrosztech@gmail.com</p>
+        
+            <h2><i class="fa-solid fa-phone"></i> Telefone</h2>
+            <p>(13) xxxxx-xxxx</p>
+        
+            <h2><i class="fa-solid fa-share-nodes"></i> Siga-nos</h2>
+
+            <div class="redes">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+        
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+        <div class="contato-formulario">
+
+            <p>
+                Tem dúvidas sobre o projeto UniBoard ou deseja conhecer mais sobre a GroszTech?
+                Entre em contato com nossa equipe.
+            </p>
+
+            <form class="form" method="POST">
+
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="name" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+                <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+                
+                <!-- Configura o assunto do e-mail -->
+                <input type="hidden" name="_subject" value="Novo contato do site">
+            
+                <button type="submit">Enviar</button>
+        
+            </form>
+
+        </div>
+    </div>
+
+</section>
     
-        <button type="submit">Enviar</button>
-
-    </form>
-
     <script>
         document.querySelector(".form").addEventListener("submit", async function(e) {
             e.preventDefault();
@@ -90,13 +124,6 @@
             }
         });
     </script>
-
-    <div class="contato-info">
-        <p>📧 contatogrosztech@gmail.com</p>
-        <p>📱 (13) xxxxx-xxxx</p>
-        <p>📍 Mongaguá - SP</p>
-    </div>
-</section>
 
     <footer>
         © 2026 GroszTech - Todos os direitos reservados
