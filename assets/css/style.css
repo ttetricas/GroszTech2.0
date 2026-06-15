@@ -1,5 +1,6 @@
 :root {
     --azul-escuro: #0b1c2d;
+    --azul-hover: #163a5c;
     --azul-neon: #00aaff;
     --branco: #ffffff;
 }
@@ -17,16 +18,14 @@ body {
     min-height: 100vh;
 }
 
-/* NAVBAR */
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    height: 90px; /* controla a altura fixa da navbar */
+    height: 90px; 
 
-    padding: 0 60px; /* remove o padding vertical */
+    padding: 0 60px; 
 
     background-color: rgba(8, 24, 39, 0.95);
 
@@ -58,7 +57,99 @@ body {
     color: var(--azul-neon);
 }
 
-/* CARDS */
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: calc(100vh - 90px);
+    padding: 80px 20px;
+
+    text-align: center;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.hero-logo{
+    width: 320px;
+    margin-bottom: 30px;
+
+    filter: drop-shadow(0 0 18px rgba(0,170,255,.45));
+    transition: .3s;
+}
+
+.hero-logo:hover{
+    transform: scale(1.05);
+}
+
+.hero h1{
+    font-size: 64px;
+    color: var(--azul-neon);
+    margin-bottom: 15px;
+}
+
+.hero-slogan{
+    display:inline-block;
+    margin:35px 0 25px;
+    padding:10px 22px;
+
+    border:1px solid var(--azul-neon);
+    border-radius:30px;
+
+    color:var(--azul-neon);
+    font-size:22px;
+    font-weight:bold;
+}
+
+.hero p{
+    font-size: 20px;
+    line-height: 1.8;
+
+    color: rgba(255,255,255,.85);
+
+    margin-bottom: 40px;
+}
+
+.hero-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 20px 45px;
+
+    background: var(--azul-neon);
+    color: var(--azul-escuro);
+
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+
+    border-radius: 10px;
+
+    transition: .3s;
+}
+
+.hero-btn:hover{
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 15px rgba(0,170,255,.5),
+        0 0 35px rgba(0,170,255,.3);
+}
+
+.hero-btn i{
+    transition: .3s;
+}
+
+.hero-btn:hover i{
+    transform: translateX(5px);
+}
 
 .cards-container {
     display: flex;
@@ -124,7 +215,31 @@ body {
     line-height: 1.6;
 }
 
-/* BOTÃO */
+.card strong{
+    color: var(--azul-neon);
+}
+
+.lista-diferenciais{
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.lista-diferenciais li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+    font-size: 17px;
+    text-align: left;
+}
+
+.lista-diferenciais li i{
+    color: var(--azul-neon);
+    font-size: 16px;
+}
 
 .btn-download {
     margin-top: 25px;
@@ -142,11 +257,9 @@ body {
 }
 
 .btn-download:hover {
-    background-color: #008ecc;
+    background-color: var(--azul-hover);
     transform: scale(1.05);
 }
-
-/* FORMULÁRIO DE CONTATO */
 
 .form {
     max-width: 600px;
@@ -211,7 +324,7 @@ body {
 }
 
 .form button:hover {
-    background-color: #008ecc;
+    background-color: var(--azul-hover);
 
     transform: translateY(-2px);
 
@@ -305,15 +418,11 @@ body {
     color: var(--azul-escuro);
 }
 
-/* FOOTER */
-
 footer {
     text-align: center;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.4);
 }
-
-/* RESPONSIVO */
 
 @media (max-width: 768px) {
 

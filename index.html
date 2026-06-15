@@ -21,30 +21,68 @@
         </ul>
     </nav>
 
+    <section class="hero">
+
+    <div class="hero-content">
+
+        <img src="assets/img/grosztechlogo.png" alt="Logo GroszTech" class="hero-logo">
+
+        <span class="hero-slogan">Tecnologia para todos.</span>
+
+        <p>
+            Desenvolvemos soluções tecnológicas inovadoras, acessíveis e sustentáveis,
+            transformando ideias em projetos que facilitam o dia a dia e promovem a inclusão
+            por meio da tecnologia.
+        </p>
+
+        <a href="#projeto" class="hero-btn">
+            Conheça o UniBoard
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
     <div class="cards-container">
 
     <section id="quem" class="card">
-        <h1>Quem Somos</h1>
+        <h1><i class="fa-solid fa-users"></i> Quem Somos</h1>
         <p>
-            A GroszTech é uma empresa focada em soluções tecnológicas inovadoras.
-            Nosso objetivo é desenvolver projetos eficientes, modernos e acessíveis,
+            A <strong>GroszTech</strong> é uma empresa focada em <strong>soluções tecnológicas inovadoras</strong>.
+            Nosso objetivo é desenvolver projetos <strong>eficientes, modernos e acessíveis</strong>,
             sempre priorizando qualidade, desempenho e segurança.
         </p>
     </section>
 
     <section id="projeto" class="card">
-        <h1>UniBoard</h1>
+        <h1><i class="fa-solid fa-microchip"></i> UniBoard</h1>
         <p>
-            O projeto UNIBOARD consiste no desenvolvimento de um painel alternativo para máquinas de lavar, baseado em Arduino.
-            A solução possui baixo custo e permite a reutilização de máquinas com painel danificado, reduzindo o descarte eletrônico.
+            O UniBoard é um painel alternativo desenvolvido com Arduino para substituir painéis danificados de máquinas de lavar. A solução oferece baixo custo, prolonga a vida útil dos equipamentos e contribui para a redução do descarte eletrônico.
         </p>
     </section>
 
+    <section id="diferenciais" class="card">
+        <h1><i class="fa-solid fa-star"></i> Diferenciais</h1>
+        <p>
+            O UniBoard foi desenvolvido para oferecer uma solução prática e acessível, proporcionando:
+        </p>
+
+        <ul class="lista-diferenciais">
+            <li><i class="fa-solid fa-check"></i> Baixo custo de implementação</li>
+            <li><i class="fa-solid fa-check"></i> Reutilização de máquinas com painel danificado</li>
+            <li><i class="fa-solid fa-check"></i> Redução do descarte eletrônico</li>
+            <li><i class="fa-solid fa-check"></i> Fácil instalação e manutenção</li>
+            <li><i class="fa-solid fa-check"></i> Tecnologia baseada em Arduino</li>
+        </ul>
+</section>
+
     <section id="manual" class="card">
-        <h1>Manual do Usuário</h1>
-        <p>Baixe abaixo o manual do sistema Uniboard.</p>
-        <a href="assets/manual/Manual do Usuário – Painel de Controle Automatizad.pdf" class="btn-download" download>
-            Baixar Manual
+        <h1><i class="fa-solid fa-book"></i> Manual do Usuário</h1>
+        <p>Baixe abaixo o manual do sistema UniBoard.</p>
+        <a href="assets/manual/Manual_UniBoard.pdf" class="btn-download" download>
+            <i class="fa-solid fa-download"></i>
+            Baixar Manual (PDF)
         </a>
     </section>
 
@@ -86,14 +124,13 @@
                 Entre em contato com nossa equipe.
             </p>
 
-            <form class="form" method="POST">
+            <form class="form" action="https://formsubmit.co/contatogrosztech@gmail.com" method="POST">
 
                 <input type="hidden" name="_captcha" value="false">
                 <input type="text" name="name" placeholder="Seu Nome" required>
                 <input type="email" name="email" placeholder="Seu E-mail" required>
                 <textarea name="message" placeholder="Sua Mensagem" required></textarea>
                 
-                <!-- Configura o assunto do e-mail -->
                 <input type="hidden" name="_subject" value="Novo contato do site">
             
                 <button type="submit">Enviar</button>
@@ -126,5 +163,6 @@
     </script>
 
     <footer>
-        © 2026 GroszTech - Todos os direitos reservados
+        <p>© 2026 GroszTech - Todos os direitos reservados</p>
+        <p>Desenvolvido para o projeto UniBoard.</p>
     </footer>
