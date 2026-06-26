@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>GroszTech - Empresa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/grosztechico.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
 
@@ -24,7 +25,7 @@
     <div class="cards-container">
 
     <section id="quem" class="card">
-        <h1><i class="fa-solid fa-users"></i> Quem Somos</h1>
+        <h1><i class="bi bi-people"></i> Quem Somos</h1>
         <p>
             A <strong>GroszTech</strong> é uma empresa focada em <strong>soluções tecnológicas inovadoras</strong>.
             Nosso objetivo é desenvolver projetos <strong>eficientes, modernos e acessíveis</strong>,
@@ -33,17 +34,17 @@
     </section>
 
     <section id="projeto" class="card">
-        <h1><i class="fa-solid fa-microchip"></i> UniBoard</h1>
+        <h1><i class="bi bi-microchip"></i> UniBoard</h1>
         <p>
             O UniBoard é um painel alternativo desenvolvido com Arduino para substituir painéis danificados de máquinas de lavar. A solução oferece baixo custo, prolonga a vida útil dos equipamentos e contribui para a redução do descarte eletrônico.
         </p>
     </section>
 
     <section id="manual" class="card">
-        <h1><i class="fa-solid fa-book"></i> Manual do Usuário</h1>
+        <h1><i class="bi bi-book"></i> Manual do Usuário</h1>
         <p>Baixe abaixo o manual do sistema UniBoard.</p>
         <a href="assets/manual/Manual_UniBoard.pdf" class="btn-download" download>
-            <i class="fa-solid fa-download"></i>
+            <i class="bi bi-download"></i>
             Baixar Manual (PDF)
         </a>
     </section>
@@ -57,25 +58,25 @@
 
             <h1>Entre em contato conosco:</h1>
         
-            <h2><i class="fa-solid fa-location-dot"></i> Localização</h2>
+            <h2><i class="bi bi-geo-alt"></i> Localização</h2>
             <p>Mongaguá - SP</p>
         
-            <h2><i class="fa-solid fa-envelope"></i> Nosso E-mail</h2>
+            <h2><i class="bi bi-envelope"></i> Nosso E-mail</h2>
             <p>contatogrosztech@gmail.com</p>
         
-            <h2><i class="fa-solid fa-phone"></i> Telefone</h2>
+            <h2><i class="bi bi-telephone"></i> Telefone</h2>
             <p>(13) xxxxx-xxxx</p>
         
-            <h2><i class="fa-solid fa-share-nodes"></i> Siga-nos</h2>
+            <h2><i class="bi bi-share-fill"></i> Siga-nos</h2>
 
             <div class="redes">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
 
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
         
-                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="bi bi-github"></i></a>
         
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
             </div>
         </div>
 
@@ -95,7 +96,7 @@
                 
                 <input type="hidden" name="_subject" value="Novo contato do site">
             
-                <button type="submit">Enviar</button>
+                <button class="btn btn-primary w-100">Enviar</button>
         
             </form>
 
@@ -103,28 +104,50 @@
     </div>
 
 </section>
+
+    <div id="toast" class="toast"></div>
     
     <script>
+        const toast = document.getElementById("toast");
+
+        function showToast(message, type = "success") {
+            toast.textContent = message;
+            toast.className = `toast show ${type}`;
+
+            setTimeout(() => {
+                toast.className = "toast";
+            }, 3000);
+        }
+
         document.querySelector(".form").addEventListener("submit", async function(e) {
             e.preventDefault();
 
             const dados = new FormData(this);
 
             try{
-                await
-                fetch("https://formsubmit.co/ajax/contatogrosztech@gmail.com", {
+                const res = await fetch("https://formsubmit.co/ajax/contatogrosztech@gmail.com", {
                     method:"POST",
                     body: dados
                 });
 
-                alert("E-mail enviado!");
+                if (res.ok) {
+                    showToast("E-mail enviado com sucesso!", "success");
+                    this.reset();
+                } else {
+                    showToast("Erro ao enviar o e-mail.", "error");
+                }
             } catch {
-                alert("Erro ao enviar!");
-            }
-        });
+                showToast("Erro de conexão. Tente novamente.", "error");
+            }     
+        });         
     </script>
 
     <footer>
         <p>© 2026 GroszTech - Todos os direitos reservados</p>
         <p>Desenvolvido para o projeto UniBoard.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

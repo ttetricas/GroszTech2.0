@@ -77,8 +77,8 @@ body {
 }
 
 .hero-logo{
-    width: 320px;
-    margin-bottom: 30px;
+    width: 800px;
+    margin-bottom: 5px;
 
     filter: drop-shadow(0 0 18px rgba(0,170,255,.45));
     transition: .3s;
@@ -94,26 +94,13 @@ body {
     margin-bottom: 15px;
 }
 
-.hero-slogan{
-    display:inline-block;
-    margin:35px 0 25px;
-    padding:10px 22px;
-
-    border:1px solid var(--azul-neon);
-    border-radius:30px;
-
-    color:var(--azul-neon);
-    font-size:22px;
-    font-weight:bold;
-}
-
 .hero p{
     font-size: 20px;
     line-height: 1.8;
 
     color: rgba(255,255,255,.85);
 
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .hero-btn{
@@ -169,6 +156,7 @@ body {
     padding: 30px;
 
     background: rgba(255, 255, 255, 0.05);
+    color: var(--branco);
 
     border: 1px solid rgba(0, 170, 255, 0.3);
     border-radius: 15px;
@@ -259,6 +247,35 @@ body {
 .btn-download:hover {
     background-color: var(--azul-hover);
     transform: scale(1.05);
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #1e1e1e;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.success {
+    background: #1f8f4a;
+}
+
+.toast.error {
+    background: #c0392b;
 }
 
 .form {
